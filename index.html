@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAIVI™ | Premium Scientific Home Hygiene & Cleaning</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Swiper.js Slider CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- AOS Animation on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --vaivi-navy: #07172e;
+            --vaivi-deep: #0e274d;
+            --vaivi-blue: #0062e3;
+            --vaivi-cyan: #00d2ff;
+            --vaivi-orange: #ff7a00;
+            --vaivi-gold: #f59e0b;
+            --vaivi-emerald: #10b981;
+            --vaivi-teal: #06d6a0;
+            --vaivi-bg: #f8fbff;
+            --vaivi-glass: rgba(255, 255, 255, 0.95);
+            --vaivi-border: rgba(0, 98, 227, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--vaivi-bg);
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        section {
+            scroll-margin-top: 95px; 
+        }
+
+        /* Scroll Progress Bar */
+        #scrollProgressBar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3.5px;
+            background: linear-gradient(90deg, var(--vaivi-blue), var(--vaivi-cyan), var(--vaivi-orange));
+            width: 0%;
+            z-index: 99999;
+            transition: width 0.1s ease;
+        }
+
+        /* Announcement Header */
+        .top-announcement {
+            background: linear-gradient(90deg, #051329, #0a254f);
+            color: #cbd5e1;
+            font-size: 0.82rem;
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .top-announcement a {
+            color: #38bdf8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .top-announcement a:hover {
+            color: #ffffff;
+        }
+
+        /* Modern Glass Navbar */
+        .navbar-luxury {
+            background: var(--vaivi-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 98, 227, 0.08);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 10px 0;
+        }
+
+        .navbar-luxury.scrolled {
+            padding: 6px 0;
+            box-shadow: 0 10px 30px rgba(8, 26, 54, 0.08);
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        /* Perfect Circle Brand Logo styling */
+        .navbar-brand-circle {
+            width: 125px; 
+            height: 125px; 
+            background: #ffffff; 
+            border-radius: 50%; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            overflow: hidden; 
+            padding: 8px; 
+            transition: transform 0.25s ease;
+        }
+
+        .navbar-brand-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; 
+        }
+
+        .navbar-brand:hover .navbar-brand-circle {
+            transform: scale(1.04);
+        }
+
+        .nav-link {
+            font-weight: 600;
+            font-size: 0.94rem;
+            color: #334155 !important;
+            padding: 8px 18px !important;
+            border-radius: 30px;
+            transition: all 0.25s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--vaivi-blue) !important;
+            background: rgba(0, 98, 227, 0.08);
+        }
+
+        .nav-link.active {
+            color: #ffffff !important;
+            background: var(--vaivi-blue) !important;
+            box-shadow: 0 4px 14px rgba(0, 98, 227, 0.25);
+        }
+
+        /* Hero Section */
+        .hero-luxury {
+            position: relative;
+            background: radial-gradient(circle at 85% 20%, #e0f2fe 0%, #f0fdf4 25%, #ffffff 70%);
+            padding: 75px 0 65px;
+            overflow: hidden;
+        }
+
+        .ambient-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, rgba(0, 98, 227, 0.03) 70%, transparent 100%);
+            filter: blur(70px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 98, 227, 0.2);
+            box-shadow: 0 4px 14px rgba(0, 98, 227, 0.08);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--vaivi-blue);
+            margin-bottom: 20px;
+        }
+
+        .hero-display-title {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1.14;
+            color: #091a36;
+            margin-bottom: 20px;
+        }
+
+        .hero-display-title .gradient-text {
+            background: linear-gradient(135deg, #0052cc 0%, #00b4d8 50%, #ff7a00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-lineup-frame {
+            background: transparent;
+            border: none;
+            padding: 0;
+            box-shadow: none;
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-lineup-frame:hover {
+            transform: translateY(-4px);
+        }
+
+        .hero-lineup-frame img {
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+            display: block;
+        }
+
+        /* Filter Controls */
+        .filter-btn {
+            border-radius: 50px;
+            padding: 8px 22px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #475569;
+            transition: all 0.25s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--vaivi-blue);
+            color: #ffffff;
+            border-color: var(--vaivi-blue);
+            box-shadow: 0 6px 18px rgba(0, 98, 227, 0.25);
+        }
+
+        /* Detailed Product Cards */
+        .product-section {
+            padding: 85px 0 95px;
+            background: #f8fbff;
+        }
+
+        .section-header-pill {
+            display: inline-block;
+            background: rgba(0, 98, 227, 0.08);
+            color: var(--vaivi-blue);
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 30px;
+            margin-bottom: 12px;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 22px;
+            border: 1px solid var(--vaivi-border);
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-shadow: 0 8px 25px rgba(8, 26, 54, 0.04);
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 98, 227, 0.12);
+            border-color: rgba(0, 98, 227, 0.3);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 30px;
+            z-index: 5;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-img-wrap {
+            height: 340px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 50% 50%, #ffffff 0%, #edf4fc 100%);
+            padding: 16px 16px 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img-wrap img {
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.35s ease;
+            filter: drop-shadow(0 12px 22px rgba(8, 26, 54, 0.12));
+        }
+
+        .product-card:hover .product-img-wrap img {
+            transform: scale(1.05);
+        }
+
+        .product-body {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-weight: 800;
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+            color: #0f172a;
+        }
+
+        .product-specs {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        .product-specs li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.4;
+        }
+
+        .product-specs li i {
+            color: var(--vaivi-emerald);
+            font-size: 0.95rem;
+            margin-top: 2px;
+        }
+
+        .size-badge {
+            background-color: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            color: #334155;
+            font-size: 0.74rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-right: 5px;
+            margin-bottom: 6px;
+        }
+
+        /* Stats Strip */
+        .stats-section {
+            background: linear-gradient(135deg, #07172e, #0d2850);
+            color: #ffffff;
+            padding: 75px 0;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #7dd3fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Reviews Slider */
+        .review-card {
+            background: #ffffff;
+            border: 1.5px solid rgba(0, 98, 227, 0.12);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(8, 26, 54, 0.05);
+        }
+        
+        .swiper-nav-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1.5px solid rgba(0, 98, 227, 0.2);
+            color: var(--vaivi-blue);
+            box-shadow: 0 8px 25px rgba(8, 26, 54, 0.14);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.25s ease;
+        }
+
+        .swiper-nav-btn:after {
+            font-size: 1rem;
+            font-weight: 900;
+        }
+        
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #94a3b8;
+            opacity: 0.4;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            width: 28px;
+            border-radius: 10px;
+            background: var(--vaivi-blue);
+            opacity: 1;
+        }
+
+        /* Offcanvas Side-Sheet Sliding Drawer (Calculator Design) */
+        .offcanvas-luxury {
+            width: 520px !important;
+            max-width: 92vw;
+            border-left: 1px solid rgba(0, 98, 227, 0.15);
+            background: #ffffff;
+            box-shadow: -15px 0 50px rgba(8, 26, 54, 0.18);
+        }
+
+        .offcanvas-header-vaivi {
+            background: linear-gradient(135deg, #07172e, #0056cc);
+            color: #ffffff;
+            padding: 22px 24px;
+        }
+
+        .drawer-img-frame {
+            background: radial-gradient(circle at 50% 60%, #ffffff 0%, #edf4fc 100%);
+            border-radius: 20px;
+            padding: 16px;
+            text-align: center;
+            border: 1.5px solid rgba(0, 98, 227, 0.12);
+            margin-bottom: 24px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 2px 12px rgba(0, 98, 227, 0.04);
+        }
+
+        .drawer-img-frame img {
+            max-height: 100%;
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 14px 28px rgba(8, 26, 54, 0.14));
+            transition: transform 0.3s ease;
+        }
+
+        .dosage-card-highlight {
+            background: linear-gradient(135deg, #f0fdf4 0%, #e6fcf5 100%);
+            border: 1.5px solid #86efac;
+            border-radius: 18px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .dosage-step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: #1e293b;
+        }
+
+        .dosage-step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-num-badge {
+            background: #16a34a;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.78rem;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Floating Action Buttons */
+        .floating-action-group {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 9999;
+        }
+
+        .fab-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            font-size: 1.6rem;
+        }
+
+        .fab-btn:hover {
+            transform: scale(1.1) translateY(-3px);
+            color: #ffffff;
+        }
+
+        .fab-whatsapp { background: #25d366; }
+        .fab-phone { background: #0062e3; }
+
+        /* Footer */
+        .footer-luxury {
+            background: #06152b;
+            color: #94a3b8;
+            padding: 80px 0 35px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scrollProgressBar"></div>
+
+    <!-- Announcement Bar -->
+    <div class="top-announcement">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+                <span><i class="bi bi-patch-check-fill text-info me-1"></i> ISO 9001:2015 Certified Manufacturing</span>
+                <span class="d-none d-md-inline">|</span>
+                <span class="d-none d-md-inline"><i class="bi bi-shield-shaded text-success me-1"></i> Clinical 99.9% Germ Shield Bio-Technology</span>
+            </div>
+            <div class="d-flex align-items-center gap-2 text-white-50 small">
+                <span class="text-white"><i class="bi bi-geo-alt-fill text-warning me-1"></i> Direct Distribution Across South India</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Luxury Navbar with Perfect Circle Logo -->
+    <nav class="navbar navbar-expand-lg navbar-luxury sticky-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand text-decoration-none" href="#home">
+                <div class="navbar-brand-circle">
+                    <img src="vaivilogonew.png" alt="VAIVI Logo">
+                </div>
+            </a>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#luxuryNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="luxuryNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">All Products (8)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#science">The Science</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-2">
+                    <a href="tel:7339493236" class="btn btn-outline-primary rounded-pill px-3 py-2 fw-semibold text-nowrap" title="Call Us">
+                        <i class="bi bi-telephone-fill me-1"></i> Call Us
+                    </a>
+                    <a href="https://wa.me/917339493236?text=Hi%20VAIVI,%20I%20am%20interested%20in%20ordering%20your%20cleaning%20products." target="_blank" class="btn btn-success rounded-pill px-3 py-2 fw-semibold text-nowrap shadow-sm">
+                        <i class="bi bi-whatsapp me-1"></i> Order Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-luxury">
+        <div class="ambient-glow" style="top: -100px; right: -50px;"></div>
+        <div class="ambient-glow" style="bottom: -150px; left: -100px; background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%);"></div>
+
+        <div class="container-fluid px-lg-5 position-relative" style="z-index: 2; max-width: 1440px;">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-5" data-aos="fade-right" data-aos-duration="900">
+                    <div class="hero-pill-badge">
+                        <i class="bi bi-stars text-warning"></i> Next-Generation Surface & Fabric Care
+                    </div>
+                    <h1 class="hero-display-title">
+                        Pure Scientific Cleanliness for <span class="gradient-text">Your Entire Home.</span>
+                    </h1>
+                    <p class="lead text-secondary mb-4" style="font-size: 1.12rem; line-height: 1.6;">
+                        Experience <strong>VAIVI™</strong>’s triple-action bio-formulations. Destroy 99.9% of harmful bacteria, cut stubborn oils in seconds, and protect fabrics with zero harsh chemicals.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3 mb-5">
+                        <a href="#products" class="btn btn-primary btn-lg rounded-pill px-4 py-3 fw-bold shadow-lg" style="background: linear-gradient(135deg, var(--vaivi-blue), #004bc2); border: none;">
+                            Explore All 8 Products <i class="bi bi-arrow-down-circle ms-2"></i>
+                        </a>
+                        <a href="https://wa.me/917339493236?text=Hi%20VAIVI,%20please%20send%20me%20your%20product%20catalog%20and%20prices." target="_blank" class="btn btn-outline-secondary btn-lg rounded-pill px-4 py-3 fw-semibold">
+                            <i class="bi bi-chat-dots-fill text-success me-2"></i> WhatsApp Inquiry
+                        </a>
+                    </div>
+
+                    <div class="row g-3 pt-4 border-top">
+                        <div class="col-4">
+                            <h4 class="fw-black mb-0 text-dark">99.9%</h4>
+                            <small class="text-muted fw-semibold">Germ Protection</small>
+                        </div>
+                        <div class="col-4">
+                            <h4 class="fw-black mb-0 text-dark">Zero</h4>
+                            <small class="text-muted fw-semibold">Harsh Corrosives</small>
+                        </div>
+                        <div class="col-4">
+                            <h4 class="fw-black mb-0 text-dark">100%</h4>
+                            <small class="text-muted fw-semibold">Family Safe</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 position-relative" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="hero-lineup-frame" id="tiltHeroCard">
+                        <img src="gemini%20image%203.png" alt="VAIVI Complete Cleaning Products Lineup" class="img-fluid w-100">
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-3 px-2 text-muted small flex-wrap gap-2">
+                        <span><i class="bi bi-shield-fill-check text-primary me-1"></i> Clinical 99.9% Bacteria & Virus Shield</span>
+                        <span><i class="bi bi-droplet-fill text-success me-1"></i> Bio-Active Enzymes • Gentle On Skin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Key Points Only Product Catalog - 3 Products Per Row -->
+    <section id="products" class="product-section">
+        <div class="container">
+            <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+                <span class="section-header-pill"><i class="bi bi-grid-fill me-1"></i> Full Product Range</span>
+                <h2 class="display-5 fw-bold mt-1 mb-2">Comprehensive Cleaning Portfolio</h2>
+                <p class="text-secondary">Explore key highlights below. Click any product for complete dosage and formulation details.</p>
+
+                <!-- Filter Navigation -->
+                <div class="d-flex flex-wrap justify-content-center gap-2 mt-4" id="categoryFilterContainer">
+                    <button class="filter-btn active" data-filter="all">All Products (8)</button>
+                    <button class="filter-btn" data-filter="laundry">Laundry Care (2)</button>
+                    <button class="filter-btn" data-filter="kitchen">Kitchen & Dishes (1)</button>
+                    <button class="filter-btn" data-filter="surface">Floor & Surface (2)</button>
+                    <button class="filter-btn" data-filter="bathroom">Bathroom & Toilet (2)</button>
+                    <button class="filter-btn" data-filter="personal">Personal Hygiene (1)</button>
+                </div>
+
+                <!-- Live Search Bar -->
+                <div class="row justify-content-center mt-4">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="input-group shadow-sm">
+                            <span class="input-group-text bg-white border-end-0 rounded-start-pill ps-3 text-muted">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" id="productSearchInput" class="form-control border-start-0 rounded-end-pill py-2" placeholder="Search by name, surface or feature...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Grid - Updated to col-lg-4 for 3 items per row -->
+            <div class="row g-4" id="productGrid">
+
+                <!-- 1. Powder -->
+                <div class="col-md-6 col-lg-4 product-item" data-category="laundry" data-keywords="detergent powder clothes laundry wash stain oxy fabric white sparkle">
+                    <div class="product-card">
+                        <span class="product-tag bg-primary text-white">Fabric Care</span>
+                        <div class="product-img-wrap">
+                            <img src="product_powder.jpg" alt="VAIVI Sparkle Detergent Powder">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">VAIVI Sparkle Powder</h3>
+                            <ul class="product-specs mt-2">
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Tech:</strong> Active Oxy-Action enzyme stain release</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>For:</strong> Whites, colors, bucket wash & machines</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Scent:</strong> Fresh Ocean Citrus Blossom</li>
+                            </ul>
+                            
+                            <div class="mb-3 mt-auto">
+                                <span class="size-badge">250g</span>
+                                <span class="size-badge">500g</span>
+                                <span class="size-badge">1 Kg</span>
+                                <span class="size-badge">2 Kg</span>
+                                <span class="size-badge">5 Kg Pack</span>
+                            </div>
+
+                            <div class="pt-3 border-top">
+                                <button class="btn btn-outline-primary w-100 rounded-pill btn-sm fw-bold product-trigger" data-product-id="powder">
+                                    <i class="bi bi-info-circle-fill me-1"></i> View Dosage & Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Liquid -->
+                <div class="col-md-6 col-lg-4 product-item" data-category="laundry" data-keywords="detergent liquid machine wash front load top load fabric aroma lavender">
+                    <div class="product-card">
+                        <span class="product-tag bg-info text-dark">Machine Special</span>
+                        <div class="product-img-wrap">
+                            <img src="product_liquid.jpg" alt="VAIVI DeepClean Detergent Liquid">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">VAIVI DeepClean Liquid</h3>
+                            <ul class="product-specs mt-2">
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Tech:</strong> Color-Lock™ & drum anti-scale matrix</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>For:</strong> Front-Load & Top-Load automatics</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Scent:</strong> Soothing French Lavender Essence</li>
+                            </ul>
+                            
+                            <div class="mb-3 mt-auto">
+                                <span class="size-badge">250 ml</span>
+                                <span class="size-badge">500 ml</span>
+                                <span class="size-badge">1 Litre</span>
+                                <span class="size-badge">2 Litres</span>
+                                <span class="size-badge">5 Litres</span>
+                            </div>
+
+                            <div class="pt-3 border-top">
+                                <button class="btn btn-outline-primary w-100 rounded-pill btn-sm fw-bold product-trigger" data-product-id="liquid">
+                                    <i class="bi bi-info-circle-fill me-1"></i> View Dosage & Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Floor Cleaner -->
+                <div class="col-md-6 col-lg-4 product-item" data-category="surface" data-keywords="floor cleaner disinfectant surface marble tiles granite shine pine green aroma">
+                    <div class="product-card">
+                        <span class="product-tag bg-success text-white">Disinfectant</span>
+                        <div class="product-img-wrap">
+                            <img src="product_floor.png" alt="VAIVI Disinfectant Floor Cleaner">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">VAIVI Floor Cleaner</h3>
+                            <ul class="product-specs mt-2">
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Action:</strong> Kills 99.9% of disease-causing germs</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>For:</strong> Marble, Granite, Tiles & Hardwood</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Bonus:</strong> Rapid-dry shine & repels house insects</li>
+                            </ul>
+                            
+                            <div class="mb-3 mt-auto">
+                                <span class="size-badge">250 ml</span>
+                                <span class="size-badge">500 ml</span>
+                                <span class="size-badge">1 Litre</span>
+                                <span class="size-badge">2 Litres</span>
+                                <span class="size-badge">5 Litres</span>
+                            </div>
+
+                            <div class="pt-3 border-top">
+                                <button class="btn btn-outline-primary w-100 rounded-pill btn-sm fw-bold product-trigger" data-product-id="floor">
+                                    <i class="bi bi-info-circle-fill me-1"></i> View Dosage & Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Dishwash Liquid -->
+                <div class="col-md-6 col-lg-4 product-item" data-category="kitchen" data-keywords="dishwash liquid lemon utensils grease pots pans lime kitchen sink">
+                    <div class="product-card">
+                        <span class="product-tag bg-warning text-dark">Lemon Power</span>
+                        <div class="product-img-wrap">
+                            <img src="product_dishwash.jpg" alt="VAIVI Ultra Lemon Dishwash Liquid">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">VAIVI Lemon Burst</h3>
+                            <ul class="product-specs mt-2">
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Action:</strong> Real lime enzymes cut grease 2x faster</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>For:</strong> Cookware, non-stick, crystal & stainless steel</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Care:</strong> Contains plant glycerin for soft hands</li>
+                            </ul>
+                            
+                            <div class="mb-3 mt-auto">
+                                <span class="size-badge">250 ml</span>
+                                <span class="size-badge">500 ml</span>
+                                <span class="size-badge">1 Litre</span>
+                                <span class="size-badge">2 Litres</span>
+                                <span class="size-badge">5 Litres</span>
+                            </div>
+
+                            <div class="pt-3 border-top">
+                                <button class="btn btn-outline-primary w-100 rounded-pill btn-sm fw-bold product-trigger" data-product-id="dishwash">
+                                    <i class="bi bi-info-circle-fill me-1"></i> View Dosage & Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Glass Cleaner -->
+                <div class="col-md-6 col-lg-4 product-item" data-category="surface" data-keywords="glass cleaner spray surface mirror window windshield streak free blue">
+                    <div class="product-card">
+                        <span class="product-tag text-white" style="background-color: #0284c7;">Streak-Free</span>
+                        <div class="product-img-wrap">
+                            <img src="product_glass.jpg" alt="VAIVI Glass & Surface Cleaner">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">VAIVI Glass Cleaner</h3>
+                            <ul class="product-specs mt-2">
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Action:</strong> 100% streak-free, fast-evaporating transparency</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>For:</strong> Mirrors, glass, windshields & TV screens</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Bonus:</strong> Anti-static formula repels ongoing dust</li>
+                            </ul>
+                            
+                            <div class="mb-3 mt-auto">
+                                <span class="size-badge">250 ml</span>
+                                <span class="size-badge">500 ml</span>
+                                <span class="size-badge">1 Litre</span>
+                                <span class="size-badge">2 Litres</span>
+                                <span class="size-badge">5 Litres</span>
+                            </div>
+
+                            <div class="pt-3 border-top">
+                                <button class="btn btn-outline-primary w-100 rounded-pill btn-sm fw-bold product-trigger" data-product-id="glass">
+                                    <i class="bi bi-info-circle-fill me-1"></i> View Dosage & Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Toilet Cleaner -->
+                <div class="col-md-6 col-lg-4 product-item" data-category="bathroom" data-keywords="toilet cleaner commode blue gel limescale yellow stains germ kill duck neck">
+                    <div class="product-card">
+                        <span class="product-tag bg-danger text-white">Power Shield</span>
+                        <div class="product-img-wrap">
+                            <img src="product_toilet.jpg" alt="VAIVI PowerShield Toilet Cleaner">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">VAIVI Toilet Cleaner</h3>
+                            <ul class="product-specs mt-2">
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Action:</strong> Dissolves tough limescale & yellow urine rust</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Formula:</strong> Thick blue clinging gel adheres to rims</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Odor:</strong> Destroys commode odor at the bacterial source</li>
+                            </ul>
+                            
+                            <div class="mb-3 mt-auto">
+                                <span class="size-badge">250 ml</span>
+                                <span class="size-badge">500 ml</span>
+                                <span class="size-badge">1 Litre</span>
+                                <span class="size-badge">2 Litres</span>
+                                <span class="size-badge">5 Litres</span>
+                            </div>
+
+                            <div class="pt-3 border-top">
+                                <button class="btn btn-outline-primary w-100 rounded-pill btn-sm fw-bold product-trigger" data-product-id="toilet">
+                                    <i class="bi bi-info-circle-fill me-1"></i> View Dosage & Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Bathroom & Tile Cleaner -->
+                <div class="col-md-6 col-lg-4 product-item" data-category="bathroom" data-keywords="bathroom cleaner tile cleaner purple pour bottle flip top cap descaler soap scum">
+                    <div class="product-card">
+                        <span class="product-tag text-white" style="background-color: #7c3aed;">Pour Descaler</span>
+                        <div class="product-img-wrap">
+                            <img src="product_bathroom.jpg" alt="VAIVI Bathroom & Tile Cleaner">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">VAIVI Bathroom & Tile</h3>
+                            <ul class="product-specs mt-2">
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Action:</strong> Melts stubborn soap scum and hard water crust</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>For:</strong> Ceramic tiles, washbasins & chrome taps</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Bottle:</strong> Dedicated flip-top pour dispenser (no spray)</li>
+                            </ul>
+                            
+                            <div class="mb-3 mt-auto">
+                                <span class="size-badge">250 ml</span>
+                                <span class="size-badge">500 ml</span>
+                                <span class="size-badge">1 Litre</span>
+                                <span class="size-badge">2 Litres</span>
+                                <span class="size-badge">5 Litres</span>
+                            </div>
+
+                            <div class="pt-3 border-top">
+                                <button class="btn btn-outline-primary w-100 rounded-pill btn-sm fw-bold product-trigger" data-product-id="bathroom">
+                                    <i class="bi bi-info-circle-fill me-1"></i> View Dosage & Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Handwash -->
+                <div class="col-md-6 col-lg-4 product-item" data-category="personal" data-keywords="handwash soap pump aloe vera antibacterial skin soft moisturizing germs hygiene">
+                    <div class="product-card">
+                        <span class="product-tag text-white" style="background-color: #059669;">Skin Gentle</span>
+                        <div class="product-img-wrap">
+                            <img src="product_handwash.jpg" alt="VAIVI PureSoft Handwash">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">VAIVI Foaming Handwash</h3>
+                            <ul class="product-specs mt-2">
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Action:</strong> Destroys 99.9% of germs in just 20 seconds</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Formula:</strong> pH 5.5 antibacterial foam with Aloe Vera</li>
+                                <li><i class="bi bi-check-circle-fill"></i> <strong>Care:</strong> 100% soap-free and prevents skin dryness</li>
+                            </ul>
+                            
+                            <div class="mb-3 mt-auto">
+                                <span class="size-badge">250 ml Pump</span>
+                                <span class="size-badge">750 ml Pouch</span>
+                                <span class="size-badge">5 Litre Pack</span>
+                            </div>
+
+                            <div class="pt-3 border-top">
+                                <button class="btn btn-outline-primary w-100 rounded-pill btn-sm fw-bold product-trigger" data-product-id="handwash">
+                                    <i class="bi bi-info-circle-fill me-1"></i> View Dosage & Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- The Science Section -->
+    <section class="stats-section position-relative" id="science">
+        <div class="container text-center mb-5" data-aos="fade-up">
+            <span class="section-header-pill text-white" style="border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.05);"><i class="bi bi-flask me-1"></i> The Science of Clean</span>
+            <h2 class="display-6 fw-bold mt-2 text-white">Engineered for Maximum Efficacy</h2>
+            <p class="text-light-50 max-w-700 mx-auto mt-3">Our bio-formulations operate on a microscopic level, lifting dirt, dissolving oils, and obliterating pathogen cell walls for a clinical-grade clean.</p>
+        </div>
+        
+        <div class="container">
+            <div class="row g-4 text-center mt-3 border-top border-secondary pt-5">
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-number">99.9%</div>
+                    <p class="text-light-50 small mb-0 fw-bold mt-2">Microbial Elimination</p>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-number">50k+</div>
+                    <p class="text-light-50 small mb-0 fw-bold mt-2">Facilities Sanitized</p>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-number">8</div>
+                    <p class="text-light-50 small mb-0 fw-bold mt-2">Advanced Formulas</p>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-number">24h</div>
+                    <p class="text-light-50 small mb-0 fw-bold mt-2">Micro-Capsule Aroma</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-5" style="background-color: var(--vaivi-bg);">
+        <div class="container py-5 position-relative">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-header-pill">Testimonials</span>
+                <h2 class="display-6 fw-bold mt-1">Trusted by Homes, Chefs & Facility Managers</h2>
+            </div>
+            
+            <div class="swiper reviewSwiper px-3 pb-5" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide h-auto">
+                        <div class="review-card p-4 h-100 d-flex flex-column">
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="text-secondary small fst-italic mb-4 flex-grow-1">"The Lemon Burst Dishwash cuts through spicy South Indian curries and biryani oil instantly. Cookware is spotless, and my hands don't dry out."</p>
+                            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+                                <div class="rounded-circle bg-primary text-white fw-bold d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">P</div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold text-dark">Priya Sundaram</h6>
+                                    <small class="text-muted">Home Chef, Bengaluru</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide h-auto">
+                        <div class="review-card p-4 h-100 d-flex flex-column">
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="text-secondary small fst-italic mb-4 flex-grow-1">"We switched our boutique hotel housekeeping to VAIVI Liquid Detergent and Floor Cleaner. Bed linens have a calm lavender scent, and marble floors stay shiny."</p>
+                            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+                                <div class="rounded-circle bg-success text-white fw-bold d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">R</div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold text-dark">Rajesh Menon</h6>
+                                    <small class="text-muted">Hospitality Director, Kochi</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide h-auto">
+                        <div class="review-card p-4 h-100 d-flex flex-column">
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="text-secondary small fst-italic mb-4 flex-grow-1">"The Glass Cleaner and Bathroom Cleaner are top-notch. Knowing VAIVI is 99.9% germ safe and non-toxic gives complete peace of mind around our kids."</p>
+                            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+                                <div class="rounded-circle bg-info text-dark fw-bold d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">A</div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold text-dark">Ananya Deshmukh</h6>
+                                    <small class="text-muted">Architect & Parent, Pune</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide h-auto">
+                        <div class="review-card p-4 h-100 d-flex flex-column">
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="text-secondary small fst-italic mb-4 flex-grow-1">"The thick blue gel in the Toilet Cleaner clings perfectly. It dissolved months of yellow calcium scale in one 20-minute application. Incredible!"</p>
+                            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+                                <div class="rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">V</div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold text-dark">Vikram Singh</h6>
+                                    <small class="text-muted">Facility Manager, Delhi</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="swiper-pagination mt-4"></div>
+            </div>
+            
+            <div class="swiper-button-prev swiper-nav-btn d-none d-md-flex" style="left: -20px;"></div>
+            <div class="swiper-button-next swiper-nav-btn d-none d-md-flex" style="right: -20px;"></div>
+        </div>
+    </section>
+
+    <!-- SLIDING OFFCANVAS DRAWER (Sliding Window for Full Details & Dosage) -->
+    <div class="offcanvas offcanvas-end offcanvas-luxury" tabindex="-1" id="productDetailDrawer" aria-labelledby="drawerTitle">
+        <div class="offcanvas-header offcanvas-header-vaivi">
+            <div>
+                <span class="badge bg-light text-primary fw-bold text-uppercase mb-1" id="drawerCategory">Category</span>
+                <h4 class="offcanvas-title fw-bold text-white mb-0" id="drawerTitle">Product Name</h4>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body p-4">
+            <!-- Product Image Frame -->
+            <div class="drawer-img-frame">
+                <img src="" id="drawerImg" alt="Product Image">
+            </div>
+
+            <!-- DOSAGE & USAGE GUIDE CARD -->
+            <div class="dosage-card-highlight">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <i class="bi bi-calculator-fill text-success fs-4"></i>
+                    <h5 class="fw-bold text-dark mb-0">Recommended Dosage & Usage Guide</h5>
+                </div>
+                <div id="drawerDosageSteps">
+                    <!-- Dynamic Steps injected via JS -->
+                </div>
+            </div>
+
+            <!-- Formulation & Technology -->
+            <div class="mb-4">
+                <h6 class="fw-bold text-dark mb-2"><i class="bi bi-shield-check text-primary me-2"></i> Scientific Formulation Overview</h6>
+                <p class="text-secondary small mb-0" id="drawerDesc" style="line-height: 1.65;"></p>
+            </div>
+
+            <!-- Available Pack Sizes -->
+            <div class="mb-4">
+                <h6 class="fw-bold text-dark mb-2"><i class="bi bi-box-seam text-primary me-2"></i> Available Pack Sizes</h6>
+                <div id="drawerSizes">
+                    <!-- Dynamic Badges -->
+                </div>
+            </div>
+
+            <!-- Fragrance Profile -->
+            <div class="mb-4 p-3 bg-light rounded-3 border">
+                <h6 class="fw-bold text-dark mb-1"><i class="bi bi-flower1 text-primary me-2"></i> Fragrance Profile</h6>
+                <p class="text-muted small mb-0" id="drawerFragrance"></p>
+            </div>
+
+            <!-- CTA Order Buttons (WhatsApp + Email) -->
+            <div class="pt-2 d-flex flex-column gap-2">
+                <a href="" id="drawerOrderBtn" target="_blank" class="btn btn-success rounded-pill w-100 py-3 fw-bold shadow-sm d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-whatsapp fs-5"></i>
+                    <span>Order on WhatsApp</span>
+                </a>
+                <a href="" id="drawerEmailBtn" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-semibold d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-envelope-fill"></i>
+                    <span>Order via Email</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Luxury Footer -->
+    <footer class="footer-luxury">
+        <div class="container">
+            <div class="row g-5 mb-5 align-items-center">
+                <div class="col-lg-7">
+                    <div class="mb-4">
+                        <div class="navbar-brand-circle" style="display: inline-flex;">
+                            <img src="vaivilogonew.png" alt="VAIVI Logo">
+                        </div>
+                    </div>
+                    <p class="small text-secondary mb-4" style="line-height: 1.7;">
+                        VAIVI™ delivers clinical-grade home cleanliness, fabric rejuvenation, and complete domestic hygiene. Manufactured with advanced eco-enzymes that protect both surfaces and family health.
+                    </p>
+                    <p class="small text-secondary mb-0">
+                        <i class="bi bi-telephone-fill text-warning me-2"></i> Direct Hotline: <a href="tel:7339493236" class="text-white fw-bold">7339493236</a><br>
+                        <i class="bi bi-whatsapp text-success me-2"></i> WhatsApp Orders: <a href="https://wa.me/917339493236" target="_blank" class="text-white fw-bold">7339493236</a><br>
+                        <i class="bi bi-envelope-fill text-danger me-2"></i> Email: <a href="mailto:info@vaivibiz.com" class="text-white fw-bold">info@vaivibiz.com</a><br>
+                        <i class="bi bi-geo-alt-fill text-info me-2"></i> VAIVI Consumer Products Ltd, Bengaluru, India
+                    </p>
+                </div>
+
+                <div class="col-lg-5">
+                    <h6 class="text-white fw-bold mb-3">Order & Distribution</h6>
+                    <p class="small text-secondary mb-3">For wholesale, institutional supplies, retail distribution, or dealership inquiries across India:</p>
+                    <a href="tel:7339493236" class="btn btn-primary rounded-pill btn-sm px-4 py-2 fw-bold me-2 mb-2">
+                        <i class="bi bi-telephone me-1"></i> Call Us
+                    </a>
+                    <a href="https://wa.me/917339493236" target="_blank" class="btn btn-outline-light rounded-pill btn-sm px-4 py-2 fw-bold me-2 mb-2">
+                        <i class="bi bi-whatsapp me-1 text-success"></i> WhatsApp Us
+                    </a>
+                    <a href="mailto:info@vaivibiz.com?subject=Wholesale%20%26%20Bulk%20Order%20Inquiry%20-%20VAIVI&body=Hi%20VAIVI%20Team,%0A%0AI%20would%20like%20to%20inquire%20about%20ordering%20VAIVI%20cleaning%20products%20for%20our%20facility%20%2F%20business.%0A%0A-%20Business%20Name:%20%0A-%20Products%20of%20Interest:%20%0A-%20Estimated%20Quantity:%20%0A-%20Delivery%20City%20%2F%20Pincode:%20%0A-%20Contact%20Phone:%20%0A%0AThank%20you!" class="btn btn-outline-info rounded-pill btn-sm px-4 py-2 fw-bold mb-2">
+                        <i class="bi bi-envelope-fill me-1"></i> Order via Email
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-4 border-top border-secondary text-center small text-secondary">
+                <p class="mb-0">© 2026 VAIVI Consumer Products Ltd. All rights reserved. Designed for pure living.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-action-group">
+        <a href="https://wa.me/917339493236?text=Hi%20VAIVI,%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="fab-btn fab-whatsapp" title="Chat on WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="tel:7339493236" class="fab-btn fab-phone" title="Call Customer Care">
+            <i class="bi bi-telephone-fill"></i>
+        </a>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- AOS Animation on Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 800, once: true, offset: 80 });
+
+        // Scroll Progress Bar & Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollProgressBar').style.width = scrolled + '%';
+
+            const navbar = document.getElementById('mainNavbar');
+            if (winScroll > 40) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize Swiper for Reviews Slider
+        const reviewSwiper = new Swiper('.reviewSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 25,
+            loop: true,
+            grabCursor: true,
+            speed: 600,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+
+        // Interactive Category & Search Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const productItems = document.querySelectorAll('.product-item');
+        const searchInput = document.getElementById('productSearchInput');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                applyFilters();
+            });
+        });
+
+        if (searchInput) {
+            searchInput.addEventListener('input', () => {
+                applyFilters();
+            });
+        }
+
+        function applyFilters() {
+            const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+            const searchQuery = searchInput.value.toLowerCase().trim();
+
+            productItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                const keywords = item.getAttribute('data-keywords').toLowerCase();
+                const title = item.querySelector('.product-title').innerText.toLowerCase();
+
+                const matchesCategory = (activeFilter === 'all' || category === activeFilter);
+                const matchesSearch = (searchQuery === '' || keywords.includes(searchQuery) || title.includes(searchQuery));
+
+                if (matchesCategory && matchesSearch) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Detailed Drawer Populator (Reverted to specific Object logic for steps design)
+        const productsCatalog = {
+            powder: {
+                title: "VAIVI Sparkle Powder",
+                category: "Laundry & Fabric Care",
+                img: "product_powder.jpg",
+                desc: "VAIVI Sparkle Detergent Powder is an ultra-fine, fast-dissolving laundry powder containing a proprietary blend of protease and amylase bio-enzymes. It penetrates deep into fabric weave to eliminate food, grease, grass, and perspiration stains. Built-in optical brighteners ensure whites stay brilliantly bright and colored clothing maintains vibrancy even after repeated washes.",
+                sizes: ["250g", "500g", "1 Kg", "2 Kg", "5 Kg Family Pack"],
+                fragrance: "Ocean Fresh Citrus Blossom (Micro-capsule long-lasting aroma)",
+                dosage: [
+                    { step: "1", title: "Hand / Bucket Wash", text: "Dissolve 1 scoop (40g) in 10L water, soak clothes for 30 minutes and wash." },
+                    { step: "2", title: "Top-Load Machine", text: "Add 1.5 scoops for normal load (6-7kg); 2 scoops for heavily soiled garments." }
+                ]
+            },
+            liquid: {
+                title: "VAIVI DeepClean Liquid",
+                category: "Laundry & Machine Care",
+                img: "product_liquid.jpg",
+                desc: "VAIVI DeepClean Detergent Liquid is a low-foam, high-concentration laundry formula. It reaches fabric fibers immediately without generating excessive suds that stress machine motors. Formulated with conditioning agents to maintain fabric softness and prevent limescale deposition inside washing machine coils.",
+                sizes: ["250 ml", "500 ml", "1 Litre", "2 Litres", "5 Litre Family Pack"],
+                fragrance: "French Lavender Calm with Essential Herbal Extracts",
+                dosage: [
+                    { step: "1", title: "Front-Load Machines", text: "Pour 1 measuring cap (50ml) into the detergent drawer. For Heavily Soiled Clothes: Use 1.5 caps (75ml)." },
+                    { step: "2", title: "Top-Load Machines", text: "Add 1.25 caps (60ml) directly into running drum water as machine fills." }
+                ]
+            },
+            floor: {
+                title: "VAIVI Disinfectant Floor Cleaner",
+                category: "Floor & Surface Hygiene",
+                img: "product_floor.png",
+                desc: "VAIVI Disinfectant Floor Cleaner combines quaternary ammonium germicides with pure pine extracts. It effortlessly removes greasy footprints, food spills, and dust from hard surfaces. Safe for children and pets to walk and crawl on once dry.",
+                sizes: ["250 ml", "500 ml", "1 Litre", "2 Litres", "5 Litres"],
+                fragrance: "Crisp Alpine Pine & Citrus Leaves",
+                dosage: [
+                    { step: "1", title: "Daily Cleaning", text: "Dilute 1 cap (approx. 20ml) into half a bucket (4 Litres) of clean water. Mop surface gently. No rinsing necessary." },
+                    { step: "2", title: "Heavy Sanitation", text: "Use undiluted on stubborn kitchen grease or pet spots, wipe after 5 minutes." }
+                ]
+            },
+            dishwash: {
+                title: "VAIVI Lemon Burst Dishwash",
+                category: "Kitchen & Utensil Care",
+                img: "product_dishwash.jpg",
+                desc: "VAIVI Lemon Burst features concentrated surfactant technology that breaks down stubborn oil and fat molecules instantly. Safe for bone china, stainless steel, non-stick frying pans, baby bottles, and delicate crystal glasses without leaving any cloudy white film.",
+                sizes: ["250 ml", "500 ml", "1 Litre", "2 Litres", "5 Litres"],
+                fragrance: "Tangy Fresh Lemon Peel & Mint Leaves",
+                dosage: [
+                    { step: "1", title: "Regular Dishwashing Sink", text: "Dilute 1 teaspoon (5ml) in a small bowl of 40ml water. Dip wet sponge, squeeze to form rich lather, and scrub dishes." },
+                    { step: "2", title: "Burnt Cookware", text: "Apply undiluted directly onto scorched spots, leave for 10 minutes, and scrub lightly. Rinse under tap water." }
+                ]
+            },
+            glass: {
+                title: "VAIVI Glass & Surface Cleaner",
+                category: "Glass & Multipurpose Surface",
+                img: "product_glass.jpg",
+                desc: "VAIVI Glass & Surface Cleaner contains a specialized isopropyl cleaning blend with anti-streaking polymer shields. It cuts grease, smudges, dirt, and water spots, leaving mirrors, car windows, and glass partitions immaculately shiny.",
+                sizes: ["250 ml", "500 ml", "1 Litre", "2 Litres", "5 Litres"],
+                fragrance: "Fresh Aqua Mist (Zero ammonia chemical odor)",
+                dosage: [
+                    { step: "1", title: "Glass Windows & Mirrors", text: "Turn nozzle to 'SPRAY' position. Spray evenly from a distance of 15-20 cm onto surface." },
+                    { step: "2", title: "Wipe Down", text: "Wipe clean immediately with a dry microfiber cloth or soft lint-free towel." }
+                ]
+            },
+            toilet: {
+                title: "VAIVI PowerShield Toilet Cleaner",
+                category: "Sanitation & Commode Care",
+                img: "product_toilet.jpg",
+                desc: "VAIVI PowerShield Toilet Cleaner is formulated with active descaling acids and viscous surfactants that coat the entire ceramic bowl. It melts mineral rings and tough stains with minimal brushing, leaving the bowl sparkling white and sanitized.",
+                sizes: ["250 ml", "500 ml", "1 Litre", "2 Litres", "5 Litres"],
+                fragrance: "Oceanic Breeze Disinfectant Scent",
+                dosage: [
+                    { step: "1", title: "Application Under Rim", text: "Twist cap to open. Direct nozzle under toilet bowl rim and squeeze liquid evenly around the bowl." },
+                    { step: "2", title: "Contact Action Time", text: "Allow thick blue gel to act for 20 minutes. Brush gently and flush for a perfectly clean bowl." }
+                ]
+            },
+            bathroom: {
+                title: "VAIVI Bathroom & Tile Cleaner",
+                category: "Bathroom Tiles & Ceramic Care",
+                img: "product_bathroom.jpg",
+                desc: "VAIVI Bathroom & Tile Cleaner utilizes deep-penetrating organic acid descalers in an easy pour/squirt bottle with a secure flip-top cap. It dissolves the toughest alkaline soap buildup and mineral scales without stripping chrome electroplating on your luxury bathroom taps.",
+                sizes: ["250 ml", "500 ml", "1 Litre", "2 Litres", "5 Litres"],
+                fragrance: "Refreshing Lavender & Mint Pine",
+                dosage: [
+                    { step: "1", title: "Floor & Wall Tiles", text: "Pour 1.5 caps into half a bucket of water and scrub with brush. Rinse with water." },
+                    { step: "2", title: "Tough Soap Scum & Taps", text: "Squirt liquid directly onto sponge or damp cloth, rub onto surface, leave for 3 minutes and rinse." }
+                ]
+            },
+            handwash: {
+                title: "VAIVI PureSoft Handwash",
+                category: "Personal Care & Hygiene",
+                img: "product_handwash.jpg",
+                desc: "Frequent handwashing often strips skin of its natural moisture. VAIVI PureSoft Foaming Handwash creates a luxurious micro-lather enriched with natural Aloe Vera, Vitamin E, and glycerin. Clinically proven to protect against 99.9% of harmful bacteria.",
+                sizes: ["250 ml Chrome Pump", "750 ml Refill Pouch", "5 Litre Institutional"],
+                fragrance: "Gentle Aloe & Green Tea Infusion",
+                dosage: [
+                    { step: "1", title: "Pump Dispensing", text: "Press pump once onto wet palms." },
+                    { step: "2", title: "20-Second Lather Protocol", text: "Lather thoroughly for 20 seconds covering palms, fingers, wrists, and nails. Rinse thoroughly with clean water." }
+                ]
+            }
+        };
+
+        const offcanvasElement = document.getElementById('productDetailDrawer');
+        const detailDrawer = new bootstrap.Offcanvas(offcanvasElement);
+
+        document.querySelectorAll('.product-trigger').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const pid = btn.getAttribute('data-product-id');
+                const data = productsCatalog[pid];
+                if (!data) return;
+
+                document.getElementById('drawerTitle').textContent = data.title;
+                document.getElementById('drawerCategory').textContent = data.category;
+                document.getElementById('drawerImg').src = data.img;
+                document.getElementById('drawerDesc').textContent = data.desc;
+                document.getElementById('drawerFragrance').textContent = data.fragrance;
+
+                // Build Dosage Steps HTML
+                const stepsContainer = document.getElementById('drawerDosageSteps');
+                stepsContainer.innerHTML = '';
+                data.dosage.forEach(d => {
+                    const stepDiv = document.createElement('div');
+                    stepDiv.className = 'dosage-step-item';
+                    stepDiv.innerHTML = `
+                        <div class="step-num-badge">${d.step}</div>
+                        <div>
+                            <strong class="text-dark d-block">${d.title}</strong>
+                            <span class="text-secondary small">${d.text}</span>
+                        </div>
+                    `;
+                    stepsContainer.appendChild(stepDiv);
+                });
+
+                // Build Sizes Badges HTML
+                const sizesContainer = document.getElementById('drawerSizes');
+                sizesContainer.innerHTML = '';
+                data.sizes.forEach(s => {
+                    const badge = document.createElement('span');
+                    badge.className = 'badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill me-2 mb-2 d-inline-block fw-bold small';
+                    badge.textContent = s;
+                    sizesContainer.appendChild(badge);
+                });
+
+                const waUrl = `https://wa.me/917339493236?text=Hi%20VAIVI,%20I%20would%20like%20to%20order%20or%20inquire%20about%20${encodeURIComponent(data.title)}`;
+                document.getElementById('drawerOrderBtn').href = waUrl;
+
+                const emailSubject = encodeURIComponent(`Order Inquiry: ${data.title}`);
+                const emailBody = encodeURIComponent(`Hi VAIVI Team,\n\nI would like to order/inquire about: ${data.title}\n\n- Preferred Pack Size:\n- Quantity:\n- Delivery Address & Pincode:\n- Contact Phone Number:\n\nThank you!`);
+                document.getElementById('drawerEmailBtn').href = `mailto:info@vaivibiz.com?subject=${emailSubject}&body=${emailBody}`;
+
+                detailDrawer.show();
+            });
+        });
+
+        // Navbar Active Link Highlighting (Click & ScrollSpy)
+        const navLinks = document.querySelectorAll('#luxuryNav .nav-link');
+        const trackedSectionIds = ['home', 'products', 'science', 'reviews'];
+        const trackedSections = trackedSectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+        let isClickScrolling = false;
+        let clickScrollTimer = null;
+
+        function setActiveNavLink(targetId) {
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === '#' + targetId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    const targetId = href.substring(1);
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                        e.preventDefault();
+                        
+                        // Immediately highlight target and lock out ScrollSpy during transition
+                        setActiveNavLink(targetId);
+                        isClickScrolling = true;
+                        clearTimeout(clickScrollTimer);
+                        clickScrollTimer = setTimeout(() => {
+                            isClickScrolling = false;
+                        }, 900);
+
+                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                        // Auto-collapse mobile navbar after click
+                        const navCollapse = document.getElementById('luxuryNav');
+                        if (navCollapse && navCollapse.classList.contains('show')) {
+                            const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+                            if (bsCollapse) bsCollapse.hide();
+                        }
+                    }
+                }
+            });
+        });
+
+        // Dynamic Viewport-based ScrollSpy on Scroll
+        function onScrollSpy() {
+            if (isClickScrolling) return;
+
+            const isBottom = (window.innerHeight + window.pageYOffset) >= (document.documentElement.scrollHeight - 60);
+            if (isBottom) {
+                setActiveNavLink('reviews');
+                return;
+            }
+
+            const checkpoint = 150;
+            let current = 'home';
+
+            for (let i = 0; i < trackedSections.length; i++) {
+                const section = trackedSections[i];
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= checkpoint && rect.bottom > checkpoint) {
+                    current = section.id;
+                    break;
+                }
+            }
+
+            setActiveNavLink(current);
+        }
+
+        window.addEventListener('scroll', onScrollSpy, { passive: true });
+
+        // 3D Tilt Effect on Hero Card
+        const heroCard = document.getElementById('tiltHeroCard');
+        if (heroCard && window.innerWidth > 992) {
+            heroCard.addEventListener('mousemove', (e) => {
+                const rect = heroCard.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                heroCard.style.transform = `perspective(1000px) rotateY(${x * 0.02}deg) rotateX(${-y * 0.02}deg) translateY(-4px)`;
+            });
+
+            heroCard.addEventListener('mouseleave', () => {
+                heroCard.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0)';
+            });
+        }
+    </script>
+</body>
+</html>
