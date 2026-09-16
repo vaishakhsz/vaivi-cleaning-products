@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VAIVI™ | Premium Scientific Home Hygiene & Cleaning</title>
+    <title>VAIVI® | Premium Scientific Home Hygiene & Cleaning</title>
     
     <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -129,6 +129,43 @@
 
         .navbar-brand:hover .navbar-brand-circle {
             transform: scale(1.04);
+        }
+
+        /* Registered Trademark Badge on Logo */
+        .brand-reg-badge {
+            position: absolute;
+            bottom: 4px;
+            right: 2px;
+            background: var(--vaivi-blue);
+            color: #ffffff;
+            font-size: 0.68rem;
+            font-weight: 800;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 8px rgba(0, 98, 227, 0.4);
+            border: 2px solid #ffffff;
+            line-height: 1;
+            z-index: 10;
+        }
+
+        /* VSQUARE INFOTECH Credit Pill */
+        .vsquare-credit-pill {
+            background: #ffffff;
+            color: #07172e;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .vsquare-credit-pill:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(0, 180, 255, 0.35) !important;
         }
 
         .nav-link {
@@ -580,14 +617,18 @@
 
     <!-- Announcement Bar -->
     <div class="top-announcement">
-        <div class="container d-flex flex-wrap justify-content-between align-items-center">
-            <div class="d-flex align-items-center gap-3">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2 py-1">
+            <div class="d-flex align-items-center gap-3 flex-wrap">
                 <span><i class="bi bi-patch-check-fill text-info me-1"></i> ISO 9001:2015 Certified Manufacturing</span>
                 <span class="d-none d-md-inline">|</span>
                 <span class="d-none d-md-inline"><i class="bi bi-shield-shaded text-success me-1"></i> Clinical 99.9% Germ Shield Bio-Technology</span>
             </div>
-            <div class="d-flex align-items-center gap-2 text-white-50 small">
-                <span class="text-white"><i class="bi bi-geo-alt-fill text-warning me-1"></i> Direct Distribution Across South India</span>
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+                <span class="text-white-50 small">Hosted, Managed & Powered by</span>
+                <span class="vsquare-credit-pill px-2.5 py-1 rounded-pill">
+                    <img src="vsquare_icon.png" alt="VSQUARE INFOTECH Logo" style="height: 16px; width: 16px; border-radius: 3px; object-fit: cover; margin-right: 6px;">
+                    <strong style="color: #07172e; font-size: 0.75rem; letter-spacing: 0.4px; font-weight: 800;">VSQUARE INFOTECH</strong>
+                </span>
             </div>
         </div>
     </div>
@@ -595,10 +636,11 @@
     <!-- Floating Luxury Navbar with Perfect Circle Logo -->
     <nav class="navbar navbar-expand-lg navbar-luxury sticky-top" id="mainNavbar">
         <div class="container">
-            <a class="navbar-brand text-decoration-none" href="#home">
+            <a class="navbar-brand text-decoration-none position-relative d-inline-block" href="#home">
                 <div class="navbar-brand-circle">
                     <img src="vaivilogonew.png" alt="VAIVI Logo">
                 </div>
+                <span class="brand-reg-badge" title="Registered Trademark">®</span>
             </a>
 
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#luxuryNav">
@@ -640,7 +682,7 @@
                         Pure Scientific Cleanliness for <span class="gradient-text">Your Entire Home.</span>
                     </h1>
                     <p class="lead text-secondary mb-4" style="font-size: 1.12rem; line-height: 1.6;">
-                        Experience <strong>VAIVI™</strong>’s triple-action bio-formulations. Destroy 99.9% of harmful bacteria, cut stubborn oils in seconds, and protect fabrics with zero harsh chemicals.
+                        Experience <strong>VAIVI®</strong>’s triple-action bio-formulations. Destroy 99.9% of harmful bacteria, cut stubborn oils in seconds, and protect fabrics with zero harsh chemicals.
                     </p>
 
                     <div class="d-flex flex-wrap gap-3 mb-5">
@@ -1156,18 +1198,21 @@
             <div class="row g-5 mb-5 align-items-center">
                 <div class="col-lg-7">
                     <div class="mb-4">
-                        <div class="navbar-brand-circle" style="display: inline-flex;">
-                            <img src="vaivilogonew.png" alt="VAIVI Logo">
+                        <div class="position-relative d-inline-block">
+                            <div class="navbar-brand-circle" style="display: inline-flex;">
+                                <img src="vaivilogonew.png" alt="VAIVI Logo">
+                            </div>
+                            <span class="brand-reg-badge" title="Registered Trademark">®</span>
                         </div>
                     </div>
                     <p class="small text-secondary mb-4" style="line-height: 1.7; font-size: 0.95rem;">
-                        VAIVI™ delivers clinical-grade home cleanliness, fabric rejuvenation, and complete domestic hygiene. Manufactured with advanced eco-enzymes that protect both surfaces and family health.
+                        VAIVI® delivers clinical-grade home cleanliness, fabric rejuvenation, and complete domestic hygiene. Manufactured with advanced eco-enzymes that protect both surfaces and family health.
                     </p>
                     <p class="small mb-0" style="color: #1e293b; line-height: 1.8;">
                         <i class="bi bi-telephone-fill text-primary me-2"></i> Direct Hotline: <a href="tel:7339493236" class="text-primary fw-bold text-decoration-none">7339493236</a><br>
                         <i class="bi bi-whatsapp text-success me-2"></i> WhatsApp Orders: <a href="https://wa.me/917339493236" target="_blank" class="text-success fw-bold text-decoration-none">7339493236</a><br>
                         <i class="bi bi-envelope-fill text-danger me-2"></i> Email: <a href="mailto:info@vaivibiz.com" class="text-dark fw-bold text-decoration-none">info@vaivibiz.com</a><br>
-                        <i class="bi bi-geo-alt-fill text-info me-2"></i> <span class="text-dark fw-semibold">VAIVI Consumer Products Ltd, Bengaluru, India</span>
+                        <i class="bi bi-geo-alt-fill text-info me-2"></i> <span class="text-dark fw-semibold">VAIVI® Consumer Products Ltd, Bengaluru, India</span>
                     </p>
                 </div>
 
@@ -1188,8 +1233,15 @@
                 </div>
             </div>
 
-            <div class="pt-4 border-top text-center small text-muted" style="border-color: #e2e8f0 !important;">
-                <p class="mb-0">© 2026 VAIVI Consumer Products Ltd. All rights reserved. Designed for pure living.</p>
+            <div class="pt-4 border-top d-flex flex-wrap justify-content-between align-items-center small text-muted gap-2" style="border-color: #e2e8f0 !important;">
+                <p class="mb-0">© 2026 VAIVI® Consumer Products Ltd. All rights reserved. Designed for pure living.</p>
+                <div class="d-flex align-items-center gap-2">
+                    <span>Hosted, Managed & Powered by</span>
+                    <span class="vsquare-credit-pill px-2.5 py-1 rounded-pill border">
+                        <img src="vsquare_icon.png" alt="VSQUARE INFOTECH Logo" style="height: 16px; width: 16px; border-radius: 3px; object-fit: cover; margin-right: 5px;">
+                        <strong style="color: #07172e; font-size: 0.75rem; letter-spacing: 0.4px; font-weight: 800;">VSQUARE INFOTECH</strong>
+                    </span>
+                </div>
             </div>
         </div>
     </footer>
