@@ -137,11 +137,11 @@
             transform: scale(1.04);
         }
 
-        /* Registered Trademark Badge on Logo */
+        /* Registered Trademark Badge on Logo (Top Position) */
         .brand-reg-badge {
             position: absolute;
-            bottom: 4px;
-            right: 2px;
+            top: 4px;
+            right: 6px;
             background: var(--vaivi-blue);
             color: #ffffff;
             font-size: 0.68rem;
@@ -158,20 +158,50 @@
             z-index: 10;
         }
 
-        /* VSQUARE INFOTECH Credit Pill */
-        .vsquare-credit-pill {
-            background: #ffffff;
-            color: #07172e;
-            transition: all 0.25s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            text-decoration: none;
+        /* VSquareInfotech Credit Styling - Uniform Font Family */
+        .vsquare-credit-wrap {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.82rem;
             display: inline-flex;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
         }
 
-        .vsquare-credit-pill:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 14px rgba(0, 180, 255, 0.35) !important;
+        .top-announcement .vsquare-credit-wrap {
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        .top-announcement .vsquare-credit-link {
+            color: #38bdf8;
+            font-weight: 700;
+            font-family: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .top-announcement .vsquare-credit-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .footer-luxury .vsquare-credit-wrap {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .footer-luxury .vsquare-credit-link {
+            color: var(--vaivi-blue);
+            font-weight: 700;
+            font-family: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-luxury .vsquare-credit-link:hover {
+            color: #003fa8;
+            text-decoration: underline;
         }
 
         .nav-link {
@@ -629,12 +659,11 @@
                 <span class="d-none d-md-inline">|</span>
                 <span class="d-none d-md-inline"><i class="bi bi-shield-shaded text-success me-1"></i> Clinical 99.9% Germ Shield Bio-Technology</span>
             </div>
-            <div class="d-flex align-items-center gap-2 flex-wrap">
-                <span class="text-white-50 small">Website Designed, Executed, Maintained &amp; Managed by</span>
-                <span class="vsquare-credit-pill px-2.5 py-1 rounded-pill">
-                    <img src="vsquare_icon.png" alt="VSQUARE INFOTECH Logo" style="height: 16px; width: 16px; border-radius: 3px; object-fit: cover; margin-right: 6px;">
-                    <strong style="color: #07172e; font-size: 0.75rem; letter-spacing: 0.4px; font-weight: 800;">VSQUARE INFOTECH</strong>
-                </span>
+            <div class="d-flex align-items-center flex-wrap">
+                <div class="vsquare-credit-wrap">
+                    <span>Website Designed, Executed, Maintained &amp; Managed by</span>
+                    <a href="https://vsquareinfotech.co.in" target="_blank" rel="noopener noreferrer" class="vsquare-credit-link">VSquareInfotech</a>
+                </div>
             </div>
         </div>
     </div>
@@ -1218,7 +1247,7 @@
                         <i class="bi bi-telephone-fill text-primary me-2"></i> Direct Hotline: <a href="tel:7339493236" class="text-primary fw-bold text-decoration-none">7339493236</a><br>
                         <i class="bi bi-whatsapp text-success me-2"></i> WhatsApp Orders: <a href="https://wa.me/917339493236" target="_blank" class="text-success fw-bold text-decoration-none">7339493236</a><br>
                         <i class="bi bi-envelope-fill text-danger me-2"></i> Email: <a href="mailto:info@vaivibiz.com" class="text-dark fw-bold text-decoration-none">info@vaivibiz.com</a><br>
-                        <i class="bi bi-geo-alt-fill text-info me-2"></i> <span class="text-dark fw-semibold">VAIVI® Consumer Products Ltd, Bengaluru, India</span>
+                        <i class="bi bi-geo-alt-fill text-info me-2"></i> <span class="text-dark fw-semibold">VAIVI® Consumer Products, Bengaluru, India</span>
                     </p>
                 </div>
 
@@ -1240,13 +1269,10 @@
             </div>
 
             <div class="pt-4 border-top d-flex flex-wrap justify-content-between align-items-center small text-muted gap-2" style="border-color: #e2e8f0 !important;">
-                <p class="mb-0">© 2026 VAIVI® Consumer Products Ltd. All rights reserved. Designed for pure living.</p>
-                <div class="d-flex align-items-center gap-2">
+                <p class="mb-0">© 2026 VAIVI® Consumer Products. All rights reserved. Designed for pure living.</p>
+                <div class="vsquare-credit-wrap">
                     <span>Website Designed, Executed, Maintained &amp; Managed by</span>
-                    <span class="vsquare-credit-pill px-2.5 py-1 rounded-pill border">
-                        <img src="vsquare_icon.png" alt="VSQUARE INFOTECH Logo" style="height: 16px; width: 16px; border-radius: 3px; object-fit: cover; margin-right: 5px;">
-                        <strong style="color: #07172e; font-size: 0.75rem; letter-spacing: 0.4px; font-weight: 800;">VSQUARE INFOTECH</strong>
-                    </span>
+                    <a href="https://vsquareinfotech.co.in" target="_blank" rel="noopener noreferrer" class="vsquare-credit-link">VSquareInfotech</a>
                 </div>
             </div>
         </div>
