@@ -137,23 +137,24 @@
             transform: scale(1.04);
         }
 
-        /* Registered Trademark Badge on Logo (Top Position) */
+        /* Registered Trademark Badge on Logo (Round circle with blue R) */
         .brand-reg-badge {
             position: absolute;
-            top: 4px;
-            right: 6px;
-            background: var(--vaivi-blue);
-            color: #ffffff;
-            font-size: 0.68rem;
-            font-weight: 800;
-            width: 22px;
-            height: 22px;
+            top: 0px;
+            right: 4px;
+            background: #ffffff;
+            color: var(--vaivi-blue);
+            border: 2.2px solid var(--vaivi-blue);
+            font-size: 0.95rem;
+            font-weight: 900;
+            font-family: 'Outfit', sans-serif;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 3px 8px rgba(0, 98, 227, 0.4);
-            border: 2px solid #ffffff;
+            box-shadow: 0 3px 10px rgba(0, 98, 227, 0.25);
             line-height: 1;
             z-index: 10;
         }
@@ -165,17 +166,24 @@
             display: inline-flex;
             align-items: center;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 6px;
+        }
+
+        .vsquare-credit-label {
+            font-weight: 700;
         }
 
         .top-announcement .vsquare-credit-wrap {
             color: #cbd5e1;
-            font-weight: 500;
+        }
+
+        .top-announcement .vsquare-credit-label {
+            color: #ffffff;
         }
 
         .top-announcement .vsquare-credit-link {
             color: #38bdf8;
-            font-weight: 700;
+            font-weight: 800;
             font-family: inherit;
             text-decoration: none;
             transition: color 0.2s ease;
@@ -186,14 +194,33 @@
             text-decoration: underline;
         }
 
+        .top-announcement .vsquare-phone-link {
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .top-announcement .vsquare-phone-link:hover {
+            color: #38bdf8;
+            text-decoration: underline;
+        }
+
+        .top-announcement .vsquare-phone-sep {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
         .footer-luxury .vsquare-credit-wrap {
-            color: #64748b;
-            font-weight: 500;
+            color: #475569;
+        }
+
+        .footer-luxury .vsquare-credit-label {
+            color: #0f172a;
         }
 
         .footer-luxury .vsquare-credit-link {
             color: var(--vaivi-blue);
-            font-weight: 700;
+            font-weight: 800;
             font-family: inherit;
             text-decoration: none;
             transition: color 0.2s ease;
@@ -202,6 +229,22 @@
         .footer-luxury .vsquare-credit-link:hover {
             color: #003fa8;
             text-decoration: underline;
+        }
+
+        .footer-luxury .vsquare-phone-link {
+            color: #0f172a;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-luxury .vsquare-phone-link:hover {
+            color: var(--vaivi-blue);
+            text-decoration: underline;
+        }
+
+        .footer-luxury .vsquare-phone-sep {
+            color: #cbd5e1;
         }
 
         .nav-link {
@@ -661,8 +704,10 @@
             </div>
             <div class="d-flex align-items-center flex-wrap">
                 <div class="vsquare-credit-wrap">
-                    <span>Website Designed, Executed, Maintained &amp; Managed by</span>
+                    <strong class="vsquare-credit-label">Website Designed, Executed, Maintained &amp; Managed by</strong>
                     <a href="https://vsquareinfotech.co.in" target="_blank" rel="noopener noreferrer" class="vsquare-credit-link">VSquareInfotech</a>
+                    <span class="vsquare-phone-sep">|</span>
+                    <a href="tel:+918547469165" class="vsquare-phone-link"><i class="bi bi-telephone-fill me-1"></i>+91 8547469165</a>
                 </div>
             </div>
         </div>
@@ -675,7 +720,7 @@
                 <div class="navbar-brand-circle">
                     <img src="vaivilogonew.png" alt="VAIVI Logo">
                 </div>
-                <span class="brand-reg-badge" title="Registered Trademark">®</span>
+                <span class="brand-reg-badge" title="Registered Trademark">R</span>
             </a>
 
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#luxuryNav">
@@ -1237,7 +1282,7 @@
                             <div class="navbar-brand-circle" style="display: inline-flex;">
                                 <img src="vaivilogonew.png" alt="VAIVI Logo">
                             </div>
-                            <span class="brand-reg-badge" title="Registered Trademark">®</span>
+                            <span class="brand-reg-badge" title="Registered Trademark">R</span>
                         </div>
                     </div>
                     <p class="small text-secondary mb-4" style="line-height: 1.7; font-size: 0.95rem;">
@@ -1271,8 +1316,10 @@
             <div class="pt-4 border-top d-flex flex-wrap justify-content-between align-items-center small text-muted gap-2" style="border-color: #e2e8f0 !important;">
                 <p class="mb-0">© 2026 VAIVI® Consumer Products. All rights reserved. Designed for pure living.</p>
                 <div class="vsquare-credit-wrap">
-                    <span>Website Designed, Executed, Maintained &amp; Managed by</span>
+                    <strong class="vsquare-credit-label">Website Designed, Executed, Maintained &amp; Managed by</strong>
                     <a href="https://vsquareinfotech.co.in" target="_blank" rel="noopener noreferrer" class="vsquare-credit-link">VSquareInfotech</a>
+                    <span class="vsquare-phone-sep">|</span>
+                    <a href="tel:+918547469165" class="vsquare-phone-link"><i class="bi bi-telephone-fill me-1"></i>+91 8547469165</a>
                 </div>
             </div>
         </div>
