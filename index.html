@@ -156,19 +156,31 @@
         .footer-luxury .vsquare-credit-wrap {
             color: #475569;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.88rem;
+            font-size: 0.82rem;
             display: inline-flex;
             align-items: center;
             justify-content: flex-end;
             text-align: right;
-            flex-wrap: wrap;
-            gap: 10px;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            gap: 8px;
             margin-left: auto;
         }
 
+        @media (max-width: 991px) {
+            .footer-luxury .vsquare-credit-wrap {
+                flex-wrap: wrap;
+                white-space: normal;
+                justify-content: center;
+                text-align: center;
+                margin-left: 0;
+            }
+        }
+
         .footer-luxury .vsquare-credit-label {
-            color: #1e293b;
-            font-weight: 700;
+            color: #334155;
+            font-weight: 600;
+            font-size: 0.82rem;
         }
 
         .footer-luxury .vsquare-credit-link {
@@ -176,34 +188,39 @@
             font-weight: 800;
             font-family: inherit;
             text-decoration: none;
-            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
         }
 
         .footer-luxury .vsquare-credit-link img {
-            height: 68px;
+            height: 38px;
             width: auto;
+            display: inline-block;
             vertical-align: middle;
-            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));
-            transition: transform 0.25s ease, filter 0.25s ease;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+            transition: transform 0.2s ease, filter 0.2s ease;
         }
 
         .footer-luxury .vsquare-credit-link:hover img {
             transform: scale(1.06);
-            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.18));
+            filter: drop-shadow(0 3px 8px rgba(0,0,0,0.15));
         }
 
         .footer-luxury .vsquare-url-badge {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
-            font-weight: 800;
-            font-size: 0.94rem;
+            gap: 4px;
+            font-weight: 700;
+            font-size: 0.82rem;
             color: #0062e3;
             background: #eff6ff;
-            padding: 5px 13px;
-            border-radius: 20px;
-            border: 1.5px solid #bfdbfe;
-            transition: all 0.25s ease;
+            padding: 3px 9px;
+            border-radius: 6px;
+            border: 1px solid #bfdbfe;
+            line-height: 1.4;
+            transition: all 0.2s ease;
         }
 
         .footer-luxury .vsquare-credit-link:hover .vsquare-url-badge {
@@ -211,14 +228,16 @@
             color: #ffffff;
             border-color: #0062e3;
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 98, 227, 0.25);
         }
 
         .footer-luxury .vsquare-phone-link {
-            color: #0f172a;
-            font-weight: 700;
+            color: #334155;
+            font-weight: 600;
+            font-size: 0.82rem;
             text-decoration: none;
             transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
         }
 
         .footer-luxury .vsquare-phone-link:hover {
@@ -228,6 +247,7 @@
 
         .footer-luxury .vsquare-phone-sep {
             color: #cbd5e1;
+            margin: 0 2px;
         }
 
         .nav-link {
@@ -1294,15 +1314,16 @@
             <div class="pt-4 border-top d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3" style="border-color: #e2e8f0 !important;">
                 <p class="mb-0 text-center text-lg-start">© 2026 VAIVI® Consumer Products. All rights reserved. Designed for pure living.</p>
                 <div class="vsquare-credit-wrap ms-lg-auto justify-content-center justify-content-lg-end text-lg-end">
-                    <span class="vsquare-credit-label">🌐 Website Designed, Developed, Hosted &amp; Managed by</span>
-                    <a href="https://vsquareinfotech.co.in" target="_blank" rel="noopener noreferrer" class="vsquare-credit-link d-inline-flex align-items-center gap-2 text-decoration-none" title="Visit VSquareInfotech Website">
-                        <img src="vsquare_logo.png" alt="VSquareInfotech" style="height: 70px; width: auto; vertical-align: middle; filter: drop-shadow(0 3px 8px rgba(0,0,0,0.12)); transition: transform 0.25s ease;">
+                    <span class="vsquare-credit-label">Website Designed, Hosted &amp; Managed by</span>
+                    <a href="https://vsquareinfotech.co.in" target="_blank" rel="noopener noreferrer" class="vsquare-credit-link" title="Visit VSquareInfotech Website">
+                        <img src="vsquare_logo.png" alt="VSquareInfotech" style="height: 38px; width: auto; vertical-align: middle;">
                         <span class="vsquare-url-badge">
                             🌐 vsquareinfotech.co.in
                         </span>
                     </a>
-                    <span class="vsquare-phone-sep">|</span>
-                    <a href="https://wa.me/918547469165" target="_blank" rel="noopener noreferrer" class="vsquare-phone-link text-success text-decoration-none" title="Chat on WhatsApp"><i class="bi bi-whatsapp me-1"></i></a><a href="tel:+918547469165" class="vsquare-phone-link"><i class="bi bi-telephone-fill me-1"></i>+91 8547469165</a>
+                    <span class="vsquare-phone-sep opacity-50">|</span>
+                    <a href="https://wa.me/918547469165" target="_blank" rel="noopener noreferrer" class="vsquare-phone-link text-success text-decoration-none" title="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    <a href="tel:+918547469165" class="vsquare-phone-link"><i class="bi bi-telephone-fill me-1"></i>+91 8547469165</a>
                 </div>
             </div>
         </div>
