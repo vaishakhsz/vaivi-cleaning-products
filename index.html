@@ -137,6 +137,32 @@
             transform: scale(1.04);
         }
 
+        /* Footer Brand Logo Circle (Larger & prominent) */
+        .footer-brand-circle {
+            width: 155px; 
+            height: 155px; 
+            background: #ffffff; 
+            border-radius: 50%; 
+            box-shadow: 0 6px 22px rgba(8, 26, 54, 0.1); 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center;
+            overflow: hidden; 
+            padding: 10px; 
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .footer-brand-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; 
+        }
+
+        .footer-brand-circle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 28px rgba(8, 26, 54, 0.15);
+        }
+
 
         /* VSquareInfotech Credit Styling - Uniform Font Family */
         .vsquare-credit-wrap {
@@ -1258,7 +1284,7 @@
                 <div class="col-lg-7">
                     <div class="mb-4">
                         <div class="d-inline-block">
-                            <div class="navbar-brand-circle" style="display: inline-flex;">
+                            <div class="footer-brand-circle">
                                 <img src="vaivilogonew.png" alt="VAIVI Logo">
                             </div>
                         </div>
